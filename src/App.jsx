@@ -21,6 +21,11 @@ function App() {
     const filterNotes = notes.filter((note) => note.id !== id);
     setNotes(filterNotes);
   };
+
+  const getActiveNote = () => {
+    return notes.find((note) => note.id === activeNote);
+  };
+
   return (
     <div className="App">
       <Sidebar
@@ -30,7 +35,7 @@ function App() {
         activeNote={activeNote}
         setActiveNote={setActiveNote}
       />
-      <Main />
+      <Main activeNote={getActiveNote()} />
     </div>
   );
 }
