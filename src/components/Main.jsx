@@ -9,9 +9,10 @@ const Main = () => {
         <textarea id="" placeholder="ノート内容を記入"></textarea>
       </div>
       <div className="app-main-note-preview">
-        <h1 className="preview-title">
+        <div className="preview-title">
+          <h1 className="preview-title">タイトル</h1>
           <div className="markdown-preview">ノート内容</div>
-        </h1>
+        </div>
       </div>
     </div>
   );
