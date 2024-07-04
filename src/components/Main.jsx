@@ -4,6 +4,7 @@ import "./Main.css";
 const Main = (props) => {
   const { activeNote } = props;
 
+  const onEditNote = () => {};
   if (!activeNote) {
     return (
       <div className="no-active-note">アクティブノートが選択されていません</div>
@@ -12,8 +13,17 @@ const Main = (props) => {
   return (
     <div className="app-main">
       <div className="app-main-note-edit">
-        <input type="text" />
-        <textarea id="" placeholder="ノート内容を記入"></textarea>
+        <input
+          id="title"
+          type="text"
+          value={activeNote.title}
+          onChange={(e) => onEditNote("title", e.target.value)}
+        />
+        <textarea
+          id=""
+          placeholder="ノート内容を記入"
+          value={activeNote.content}
+        ></textarea>
       </div>
       <div className="app-main-note-preview">
         <div className="preview-title">
