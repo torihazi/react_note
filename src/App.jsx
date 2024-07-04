@@ -6,9 +6,9 @@ import uuid from "react-uuid";
 
 function App() {
   const [notes, setNotes] = useState([]);
+  const [activeNote, setActiveNote] = useState(false);
 
   const onAddNote = () => {
-    console.log("ボタンが");
     const newNote = {
       id: uuid(),
       title: "新しいノート",
@@ -16,7 +16,6 @@ function App() {
       modDate: Date.now(),
     };
     setNotes([...notes, newNote]);
-    console.log(notes);
   };
   const onDeleteNote = (id) => {
     const filterNotes = notes.filter((note) => note.id !== id);
@@ -28,6 +27,8 @@ function App() {
         onAddNote={onAddNote}
         onDeleteNote={onDeleteNote}
         notes={notes}
+        activeNote={activeNote}
+        setActiveNote={setActiveNote}
       />
       <Main />
     </div>
