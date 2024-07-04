@@ -1,5 +1,6 @@
 import React from "react";
 import "./Main.css";
+import Markdown from "react-markdown";
 
 const Main = (props) => {
   const { activeNote, onUpdateNote } = props;
@@ -35,7 +36,7 @@ const Main = (props) => {
       <div className="app-main-note-preview">
         <div className="preview-title">
           <h1 className="preview-title">{activeNote.title}</h1>
-          <div className="markdown-preview">{activeNote.content}</div>
+          <Markdown className="markdown-preview">{activeNote.content}</Markdown>
         </div>
       </div>
     </div>
